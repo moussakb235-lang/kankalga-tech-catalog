@@ -1,0 +1,13 @@
+name: Kankalga Bot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Tester le bot
+        run: |
+          echo "KANKALGA BOT fonctionne sur GitHub Actions !"
