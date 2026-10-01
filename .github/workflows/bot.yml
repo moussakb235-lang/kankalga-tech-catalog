@@ -8,6 +8,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Tester le bot
-        run: |
-          echo "KANKALGA BOT fonctionne sur GitHub Actions !"
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Lancer le bot
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: python bot.py
