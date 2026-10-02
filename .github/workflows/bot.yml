@@ -22,4 +22,5 @@ jobs:
       - name: Lancer le bot
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: python bot.py
